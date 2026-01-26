@@ -1,0 +1,21 @@
+const mongoose=require('mongoose');
+const Schema=mongoose.Schema;
+
+const listingSchema=new Schema({
+    title:{
+        type:String,
+        required:true
+    },
+    description:String,
+    image:{
+        type:String,
+        default:"https://images.hdqwalls.com/wallpapers/beautiful-scenery.jpg",
+        set:(v)=>v==="" ? "https://images.hdqwalls.com/wallpapers/beautiful-scenery.jpg":v, 
+    },
+    price:Number,
+    location:String,
+    country:String
+});
+
+const Listing= new mongoose.model("Listing",listingSchema)
+module.exports =Listing
