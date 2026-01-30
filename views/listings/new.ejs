@@ -1,20 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WonderLust</title>
-</head>
-<body>
-    <h2>Create  a New Listing</h2>
+<%layout("./layouts/boilerplate.ejs")%>
+<br />
+<div class="row">
+  <div class="col-8 offset-2">
+    <h2>Create a New Listing</h2>
+    <br />
+
     <form action="/listings" method="post">
-        <input type="text" name="title" placeholder="Enter title"><br><br>
-        <textarea type="text" name="description" placeholder="Enter description"></textarea><br><br>
-        <input type="im" name="image" placeholder="Enter image url/Link"><br><br>
-        <input type="number" name="price" placeholder="Enter price"><br><br>
-        <input type="text" name="location" placeholder="Enter location"><br><br>
-        <input type="text" name="country" placeholder="Enter country"><br><br>
-        <button>Add</button>
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          name="title"
+          placeholder="Add the Catchy Title"
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description:</label>
+        <textarea
+          type="text"
+          name="description"
+          class="form-control"
+        ></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Image:</label>
+        <input
+          type="text"
+          class="form-control"
+          name="image"
+          placeholder="Enter image url/Link"
+        />
+      </div>
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form-label">Price:</label>
+          <input
+            type="number"
+            name="price"
+            placeholder="1200"
+            class="form-control"
+          />
+        </div>
+
+        <div class="mb-3 col-md-8">
+          <label for="country" class="form-label">Country:</label>
+          <input
+            type="text"
+            name="country"
+            placeholder="India"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="location" class="form-label">Location:</label>
+        <input
+          type="text"
+          name="location"
+          placeholder="Alibag,panvel"
+          class="form-control"
+        />
+      </div>
+      <br />
+
+      <button class="btn btn-dark add-btn">Add</button><br /><br /><br />
     </form>
-</body>
-</html>
+  </div>
+</div>
